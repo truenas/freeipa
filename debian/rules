@@ -1,0 +1,70 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/architecture.mk
+include /usr/share/dpkg/pkg-info.mk
+
+CFLAGS += -D_FORTIFY_SOURCE=2
+
+DESTDIR=$(CURDIR)/debian/tmp
+
+export PYTHON=python3
+export am_cv_python_pythondir=/usr/lib/python3/dist-packages
+export am_cv_python_pyexecdir=/usr/lib/python3/dist-packages
+
+confflags = \
+	--libexecdir=/usr/lib/ \
+	--with-ipaplatform=debian \
+	--with-sysconfenvdir=/etc/default \
+	--disable-pylint \
+	--disable-server \
+        --without-iptables \
+        --without-ipatests \
+	--without-ipa-join-xml \
+	--without-jslint
+
+override_dh_clean:
+	dh_clean
+	rm -f po/*.gmo po/Makefile.hack po/POTFILES.in po/stamp-po
+	rm -rf contrib/completion/ipa.bash_completion daemons/ipa-version.h \
+	       install/ui/src/libs/loader.js m4
+	rm -f ipaplatform/override.py ipapython/version.py ipasetup.py
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(confflags)
+
+# tests would just fail, they need a proper environment with 389 running et al
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install --max-parallel=1
+
+	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions \
+	install -m 0644 contrib/completion/ipa.bash_completion \
+		$(DESTDIR)/usr/share/bash-completion/completions/ipa
+	rm -rf $(DESTDIR)/etc/bash_completion.d
+
+	# purge .la files
+	find $(CURDIR)/debian/tmp -name "*.la" -type f -exec rm -f "{}" \;
+	# purge precompiled .pyc/.pyo files
+	find $(CURDIR)/debian/tmp -name '*.py[c,o]' -exec rm '{}' ';'
+	# fix permissions
+	find $(CURDIR)/debian/tmp -name "*.mo" -type f -exec chmod -x "{}" \;
+	# remove files which are useful only for make uninstall
+	find $(CURDIR)/debian/tmp -wholename '*/dist-packages/*/install_files.txt' -exec rm '{}' \;
+	# fix the interpreter
+	find debian/tmp ! -name '*.pyc' -a ! -name '*.pyo' -a \
+	    -type f -exec grep -qsm1 '^#!.*\bpython' {} \; \
+	    -exec sed -i -e '1 s|^#!.*\bpython[^ ]*|#!/usr/bin/python3|' {} \;
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_fixperms:
+	dh_fixperms
+
+%:
+	dh $@ --with python3
+#		--builddirectory=build

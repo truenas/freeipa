@@ -1,0 +1,7 @@
+dbus_python python3-dbus-python
+dogtag_pki pki-server
+ipaclient python3-ipaclient
+ipalib python3-ipalib
+ipaplatform python3-ipaplatform
+ipapython python3-ipapython
+jwcrypto python3-jwcrypto

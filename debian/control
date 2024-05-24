@@ -1,0 +1,136 @@
+Source: freeipa
+Section: net
+Priority: optional
+Maintainer: TrueNAS Development Team <dev@ixsystems.com>
+Standards-Version: 4.5.0
+Homepage: http://www.freeipa.org
+Build-Depends:
+ check,
+ debhelper-compat (= 13),
+ dh-python,
+ gettext,
+ krb5-user,
+ libcmocka-dev,
+ libcurl4-openssl-dev,
+ libini-config-dev,
+ libjansson-dev,
+ libkrad-dev,
+ libkrb5-dev (>= 1.18),
+ libldap2-dev,
+ libnspr4-dev,
+ libpopt-dev,
+ libsasl2-dev,
+ libssl-dev,
+ python3-all-dev,
+ python3-cryptography,
+ python3-dbus,
+ python3-dnspython (>= 1.11.1),
+ python3-gssapi,
+ python3-jinja2,
+ python3-kdcproxy,
+ python3-ldap (>= 3.1),
+ python3-lesscpy,
+ python3-lxml,
+ python3-netaddr,
+ python3-netifaces (>= 0.10.4),
+ python3-nose,
+ python3-polib,
+ python3-pyasn1,
+ python3-qrcode (>= 5.0.0),
+ python3-setuptools,
+ python3-six,
+ python3-usb (>= 1.0.0~b2),
+ python3-yubico,
+ systemd,
+ uuid-dev,
+ truenas-samba,
+ truenas-sssd,
+Vcs-Browser: https://github.com/truenas/freeipa
+Vcs-Git: https://github.com/truenas/freeipa
+
+Package: truenas-ipaclient
+Architecture: any
+Depends:
+ bind9-utils,
+ certmonger (>= 0.79.5-2),
+ cifs-utils,
+ curl,
+ dnsutils,
+ krb5-user,
+ libnss3-tools,
+ libsasl2-modules-gssapi-mit,
+ python3-dnspython,
+ python3-gssapi,
+ python3-ldap,
+ python3-truenas-ipaclient,
+ systemd,
+ truenas-samba,
+ truenas-sssd,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends}
+Recommends:
+ chrony,
+Suggests:
+ libpam-krb5,
+Provides:
+ freeipa-client,
+ freeipa-common,
+ freeipa-client-epn,
+ freeipa-client-samba,
+Conflicts:
+ systemd-timesyncd,
+ freeipa-client,
+ freeipa-common,
+ freeipa-client-epn,
+ freeipa-client-samba,
+Description: FreeIPA centralized identity framework -- client
+ FreeIPA is an integrated solution to provide centrally managed Identity
+ (machine, user, virtual machines, groups, authentication credentials), Policy
+ (configuration settings, access control information) and Audit (events,
+ logs, analysis thereof).
+ .
+ This is the client package.
+
+Package: python3-truenas-ipaclient
+Architecture: all
+Section: python
+Depends:
+ gpg,
+ gpg-agent,
+ keyutils,
+ librpm9,
+ truenas-sssd,
+ python3-augeas,
+ python3-cffi,
+ python3-cryptography,
+ python3-dbus,
+ python3-dnspython,
+ python3-gssapi,
+ python3-jinja2,
+ python3-ldap,
+ python3-lxml,
+ python3-netaddr,
+ python3-netifaces (>= 0.10.4),
+ python3-pyasn1,
+ python3-qrcode (>= 5.0.0),
+ python3-requests,
+ python3-setuptools,
+ python3-six,
+ python3-usb (>= 1.0.0~b2),
+ python3-yubico,
+ ${misc:Depends},
+ ${python3:Depends},
+Conflicts:
+ python3-ipaclient,
+ python3-ipalib,
+Provides:
+ python3-ipaclient,
+ python3-ipalib,
+Description: FreeIPA centralized identity framework -- Python3 modules for ipaclient
+ FreeIPA is an integrated solution to provide centrally managed Identity
+ (machine, user, virtual machines, groups, authentication credentials), Policy
+ (configuration settings, access control information) and Audit (events,
+ logs, analysis thereof).
+ .
+ This Python3 module is used by FreeIPA client.

@@ -1,0 +1,6 @@
+freeipa (4.9.14-1) unstable; urgency=medium
+
+  * Initial version of TrueNAS IPA client based on upstream
+  * debian packages
+
+ -- Andrew Walker <awalker@ixsystems.com>  Mon, 20 May 2024 17:00:00 +0000

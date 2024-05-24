@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = purge ]; then
+    rm -f /etc/ipa/default.conf
+    rm -f /etc/pki/nssdb/cert8.db \
+          /etc/pki/nssdb/key3.db \
+          /etc/pki/nssdb/secmod.db
+    rm -f /etc/ipa/nssdb/cert8.db \
+          /etc/ipa/nssdb/key3.db \
+          /etc/ipa/nssdb/pwdfile.txt \
+          /etc/ipa/nssdb/secmod.db \
+          /etc/ipa/nssdb/*.orig
+    rmdir /etc/pki/nssdb || true
+    rmdir /etc/ipa/nssdb || true
+    rmdir /etc/ipa || true
+    rm -rf /var/lib/ipa-client
+    rm -f /var/log/ipaclient-upgrade.log
+fi
+
+#DEBHELPER#
+

@@ -1,0 +1,8 @@
+--- a/install/share/advise/legacy/sssd.conf.template
++++ b/install/share/advise/legacy/sssd.conf.template
+@@ -1,5 +1,4 @@
+ [sssd]
+-services = nss, pam
+ config_file_version = 2
+ domains = default
+ re_expression = (?P<name>.+)

@@ -1,0 +1,32 @@
+etc/default/certmonger
+usr/bin/ipa
+usr/lib/ipa/acme/certbot-dns-ipa
+usr/sbin/ipa-certupdate
+usr/sbin/ipa-client-automount
+usr/sbin/ipa-client-install
+usr/sbin/ipa-getkeytab
+usr/sbin/ipa-join
+usr/sbin/ipa-rmkeytab
+usr/share/bash-completion/completions/ipa
+usr/share/ipa/client/*.template
+usr/share/man/man1/ipa.1*
+usr/share/man/man1/ipa-certupdate.1*
+usr/share/man/man1/ipa-client-automount.1*
+usr/share/man/man1/ipa-client-install.1*
+usr/share/man/man1/ipa-getkeytab.1*
+usr/share/man/man1/ipa-join.1*
+usr/share/man/man1/ipa-rmkeytab.1*
+usr/share/man/man5/default.conf.5*
+# freeipa-client-samba
+usr/sbin/ipa-client-samba
+usr/share/man/man1/ipa-client-samba.1*
+# freeipa-common
+usr/share/locale
+# freeipa-client-epn
+etc/ipa/epn.conf
+etc/ipa/epn/expire_msg.template
+lib/systemd/system/ipa-epn.service
+lib/systemd/system/ipa-epn.timer
+usr/sbin/ipa-epn
+usr/share/man/man1/ipa-epn.1
+usr/share/man/man5/epn.conf.5

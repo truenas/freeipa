@@ -1,0 +1,7 @@
+# upstreamed
+
+# not upstreamable
+dnssec-race-wa.diff
+fix-sssd-socket-activation.diff
+
+# send upstream

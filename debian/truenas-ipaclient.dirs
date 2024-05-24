@@ -1,0 +1,6 @@
+etc/ipa
+etc/ipa/nssdb
+etc/krb5.conf.d
+etc/pki/nssdb
+var/lib/ipa-client/pki
+var/lib/ipa-client/sysrestore

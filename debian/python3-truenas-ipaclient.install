@@ -1,0 +1,14 @@
+# python3-ipaclient
+usr/lib/python*/dist-packages/ipaclient-*.egg-info
+usr/lib/python*/dist-packages/ipaclient/*.py
+usr/lib/python*/dist-packages/ipaclient/install/*.py
+usr/lib/python*/dist-packages/ipaclient/plugins/*.py
+usr/lib/python*/dist-packages/ipaclient/remote_plugins/*.py
+usr/lib/python*/dist-packages/ipaclient/remote_plugins/2_*/*.py
+# python3-ipalib
+usr/lib/python*/dist-packages/ipalib-*.egg-info
+usr/lib/python*/dist-packages/ipalib/*
+usr/lib/python*/dist-packages/ipaplatform-*.egg-info
+usr/lib/python*/dist-packages/ipaplatform/*
+usr/lib/python*/dist-packages/ipapython-*.egg-info
+usr/lib/python*/dist-packages/ipapython/*
