@@ -111,7 +111,6 @@ Depends:
  python3-ldap,
  python3-lxml,
  python3-netaddr,
- python3-netifaces (>= 0.10.4),
  python3-pyasn1,
  python3-qrcode (>= 5.0.0),
  python3-requests,

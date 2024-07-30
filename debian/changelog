@@ -1,3 +1,10 @@
+freeipa (4.12.1-1) unstable; urgency=medium
+
+  * Update to latest stable FreeIPA release
+
+ -- Andrew Walker <awalker@ixsystems.com>  Tue, 30 July 2024 17:00:00 +0000
+
+
 freeipa (4.9.14-1) unstable; urgency=medium
 
   * Initial version of TrueNAS IPA client based on upstream
