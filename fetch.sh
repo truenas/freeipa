@@ -1,5 +1,5 @@
 #!/bin/sh -ex
-VERSION=release-4-9-14
+VERSION=release-4-12-1
 
 git clone https://github.com/freeipa/freeipa --single-branch --branch ${VERSION} --depth 1 freeipa.src
 cp -r freeipa.src/* .
