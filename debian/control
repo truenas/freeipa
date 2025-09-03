@@ -21,6 +21,7 @@ Build-Depends:
  libpopt-dev,
  libsasl2-dev,
  libssl-dev,
+ libsystemd-dev,
  pkg-config,
  python3-all-dev,
  python3-cryptography,
