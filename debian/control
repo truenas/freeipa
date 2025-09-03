@@ -21,6 +21,7 @@ Build-Depends:
  libpopt-dev,
  libsasl2-dev,
  libssl-dev,
+ pkg-config,
  python3-all-dev,
  python3-cryptography,
  python3-dbus,
@@ -44,7 +45,7 @@ Build-Depends:
  systemd,
  uuid-dev,
  truenas-samba,
- truenas-sssd,
+ truenas-sssd
 Vcs-Browser: https://github.com/truenas/freeipa
 Vcs-Git: https://github.com/truenas/freeipa
 
