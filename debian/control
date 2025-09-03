@@ -34,7 +34,6 @@ Build-Depends:
  python3-lxml,
  python3-netaddr,
  python3-netifaces (>= 0.10.4),
- python3-nose,
  python3-polib,
  python3-pyasn1,
  python3-qrcode (>= 5.0.0),
