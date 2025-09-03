@@ -100,7 +100,7 @@ Depends:
  gpg,
  gpg-agent,
  keyutils,
- librpm9,
+ librpm10,
  truenas-sssd,
  python3-augeas,
  python3-cffi,
