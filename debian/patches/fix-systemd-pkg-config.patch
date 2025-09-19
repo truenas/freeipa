@@ -1,0 +1,15 @@
+Description: Use libsystemd instead of systemd for pkg-config check
+ Debian provides libsystemd.pc instead of systemd.pc
+Author: FreeIPA Team
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -252,7 +252,7 @@ AC_SUBST([runstatedir])
+ dnl - Check for systemd directories
+ dnl ---------------------------------------------------------------------------
+ 
+-PKG_CHECK_EXISTS([systemd], [], [AC_MSG_ERROR([systemd not found])])
++PKG_CHECK_EXISTS([libsystemd], [], [AC_MSG_ERROR([libsystemd not found])])
+ AC_ARG_WITH([systemdsystemunitdir],
+             AS_HELP_STRING([--with-systemdsystemunitdir=DIR],
+                [Directory for systemd service files]),

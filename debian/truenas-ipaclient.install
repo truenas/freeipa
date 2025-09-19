@@ -25,8 +25,8 @@ usr/share/locale
 # freeipa-client-epn
 etc/ipa/epn.conf
 etc/ipa/epn/expire_msg.template
-lib/systemd/system/ipa-epn.service
-lib/systemd/system/ipa-epn.timer
+usr/lib/systemd/system/ipa-epn.service
+usr/lib/systemd/system/ipa-epn.timer
 usr/sbin/ipa-epn
 usr/share/man/man1/ipa-epn.1
 usr/share/man/man5/epn.conf.5

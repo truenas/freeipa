@@ -18,6 +18,7 @@ confflags = \
 	--libexecdir=/usr/lib/ \
 	--with-ipaplatform=debian \
 	--with-sysconfenvdir=/etc/default \
+	--with-systemdsystemunitdir=/usr/lib/systemd/system \
 	--disable-pylint \
 	--disable-server \
         --without-iptables \
