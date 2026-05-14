@@ -108,6 +108,7 @@ Depends:
  python3-dbus,
  python3-dnspython,
  python3-gssapi,
+ python3-ifaddr,
  python3-jinja2,
  python3-ldap,
  python3-lxml,
